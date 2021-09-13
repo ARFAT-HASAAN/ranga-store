@@ -11,13 +11,17 @@ const showProducts = (products) => {
     const image = product.image;
     const div = document.createElement("div");
     div.classList.add("product");
-    div.innerHTML = `<div class="single-product">
+    div.innerHTML = `<div class="single-product text-center">
       <div>
     <img class="product-image" src=${image}></img>
       </div>
-      <h3>${product.title}</h3>
+      <h3><b>${product.title}</b></h3>
       <p>Category: ${product.category}</p>
-      <h2>Price: $ ${product.price}</h2>
+      <h1><b> Price: $ ${product.price}</h1></b><br>
+      <div>
+      <span><i class="fas fa-user fa-2x"> ${product.rating.count} </i> </span>  
+       <span style=" font-size: 30px; font-weight: 500; "> | </span>
+      <span><i class="fas fa-star fa-2x"> ${product.rating.rate}</i> </span> </div><br>
       <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-success">add to cart</button>
       <button id="details-btn" class="btn btn-danger">Details</button></div>
       `;
